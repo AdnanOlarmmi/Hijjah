@@ -26,12 +26,17 @@ export function Navbar() {
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         scrolled
           ? "bg-background/80 backdrop-blur-xl border-b border-border"
-          : "bg-transparent"
+          : "bg-black/10 backdrop-blur-sm"
       )}
     >
       <nav className="content-max-w flex items-center justify-between h-16 sm:h-20 px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-2">
-          <span className="text-xl sm:text-2xl font-heading font-semibold text-primary">
+          <span
+            className={cn(
+              "text-xl sm:text-2xl font-heading font-semibold transition-colors duration-300",
+              scrolled ? "text-primary" : "text-off-white"
+            )}
+          >
             {siteConfig.name}
           </span>
         </Link>
@@ -41,7 +46,12 @@ export function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors relative group"
+              className={cn(
+                "text-sm font-medium transition-colors duration-300 relative group",
+                scrolled
+                  ? "text-muted-foreground hover:text-foreground"
+                  : "text-off-white/80 hover:text-off-white"
+              )}
             >
               {link.label}
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
@@ -53,7 +63,12 @@ export function Navbar() {
           {resolvedTheme && (
             <button
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="p-2 rounded-full text-muted-foreground hover:text-foreground transition-colors"
+              className={cn(
+                "p-2 rounded-full transition-colors duration-300",
+                scrolled
+                  ? "text-muted-foreground hover:text-foreground"
+                  : "text-off-white/80 hover:text-off-white"
+              )}
               aria-label="Toggle dark mode"
             >
               {theme === "dark" ? (
@@ -66,20 +81,33 @@ export function Navbar() {
 
           <a
             href="tel:+2348130036768"
-            className="hidden sm:flex items-center gap-2 text-sm font-medium text-primary hover:text-primary/80 transition-colors"
+            className={cn(
+              "hidden sm:flex items-center gap-2 text-sm font-medium transition-colors duration-300",
+              scrolled
+                ? "text-primary hover:text-primary/80"
+                : "text-off-white/80 hover:text-off-white"
+            )}
           >
             <Phone className="h-4 w-4" />
             <span>+234 813 003 6768</span>
           </a>
 
-          <Button render={<Link href="/packages" />} className="hidden sm:inline-flex" size="sm">
+          <Button
+            render={<Link href="/packages" />}
+            className={cn(
+              "hidden sm:inline-flex transition-all duration-300",
+              !scrolled && "border-off-white/60 bg-white/10 text-off-white hover:bg-white/20 hover:text-off-white backdrop-blur-sm"
+            )}
+            size="sm"
+            variant={scrolled ? "default" : "outline"}
+          >
             Book Your Journey
           </Button>
 
           <Sheet>
             <SheetTrigger
               render={
-                <Button variant="ghost" size="icon" aria-label="Open menu">
+                <Button variant="ghost" size="icon" aria-label="Open menu" className={cn(!scrolled && "text-off-white hover:text-off-white hover:bg-white/15")}>
                   <Menu className="h-5 w-5" />
                 </Button>
               }
