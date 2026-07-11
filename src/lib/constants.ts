@@ -74,6 +74,7 @@ export const packages = [
     remainingSeats: 20,
     popular: false,
     currency: "₦",
+    category: "umrah",
   },
   {
     id: 2,
@@ -92,6 +93,7 @@ export const packages = [
     remainingSeats: 20,
     popular: true,
     currency: "₦",
+    category: "umrah",
   },
   {
     id: 3,
@@ -110,6 +112,7 @@ export const packages = [
     remainingSeats: 20,
     popular: false,
     currency: "₦",
+    category: "umrah",
   },
   {
     id: 4,
@@ -128,6 +131,7 @@ export const packages = [
     remainingSeats: 15,
     popular: false,
     currency: "₦",
+    category: "umrah",
   },
   {
     id: 5,
@@ -147,6 +151,7 @@ export const packages = [
     popular: false,
     currency: "₦",
     isDeposit: true,
+    category: "hajj",
   },
 ];
 

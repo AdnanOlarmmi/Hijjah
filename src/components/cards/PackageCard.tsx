@@ -25,6 +25,7 @@ interface PackageCardProps {
   index?: number;
   currency?: string;
   isDeposit?: boolean;
+  category?: string;
 }
 
 export function PackageCard({
@@ -45,6 +46,7 @@ export function PackageCard({
   index = 0,
   currency = "$",
   isDeposit,
+  category,
 }: PackageCardProps) {
   const features = [
     `${duration} Duration`,
@@ -64,14 +66,14 @@ export function PackageCard({
       transition={{ duration: 0.5, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
       whileHover={{ y: -4, transition: { duration: 0.3, ease: "easeOut" } }}
       className={cn(
-        "relative rounded-2xl border p-6 sm:p-8 bg-card transition-shadow duration-300",
+        "relative rounded-2xl border bg-card transition-shadow duration-300",
         popular
-          ? "border-primary shadow-lg shadow-primary/5"
-          : "border-border shadow-sm hover:shadow-lg"
+          ? "border-primary shadow-lg shadow-primary/5 pt-12 pb-6 sm:pb-8 px-6 sm:px-8"
+          : "border-border shadow-sm hover:shadow-lg p-6 sm:p-8"
       )}
     >
       {popular && (
-        <Badge className="absolute -top-3 left-6 bg-primary text-primary-foreground px-4 py-1">
+        <Badge className="absolute top-4 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground px-4 py-1 whitespace-nowrap shadow-sm">
           Most Popular
         </Badge>
       )}
