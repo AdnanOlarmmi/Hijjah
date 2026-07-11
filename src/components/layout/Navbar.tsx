@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, Moon, Sun, Phone } from "lucide-react";
+import { Menu, Moon, Sun, Phone, MessageCircle } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -12,16 +12,19 @@ import { cn } from "@/lib/utils";
 import { navLinks, siteConfig } from "@/lib/constants";
 
 export function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
-  const { theme, setTheme, resolvedTheme } = useTheme();
   const pathname = usePathname();
   const isHome = pathname === "/";
+  const [scrolled, setScrolled] = useState(!isHome);
+  const { theme, setTheme, resolvedTheme } = useTheme();
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    if (isHome) {
+      setScrolled(window.scrollY > 20);
+      const handleScroll = () => setScrolled(window.scrollY > 20);
+      window.addEventListener("scroll", handleScroll, { passive: true });
+      return () => window.removeEventListener("scroll", handleScroll);
+    }
+  }, [isHome]);
 
   return (
     <header
@@ -29,9 +32,7 @@ export function Navbar() {
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         scrolled
           ? "bg-background/80 backdrop-blur-xl border-b border-border"
-          : isHome
-            ? "bg-black/10 backdrop-blur-sm"
-            : "bg-background/80 backdrop-blur-xl border-b border-border"
+          : "bg-black/10 backdrop-blur-sm"
       )}
     >
       <nav className="content-max-w flex items-center justify-between h-16 sm:h-20 px-4 sm:px-6 lg:px-8">
@@ -39,7 +40,7 @@ export function Navbar() {
           <span
             className={cn(
               "text-xl sm:text-2xl font-heading font-semibold transition-colors duration-300",
-              scrolled || !isHome ? "text-primary" : "text-off-white"
+              scrolled ? "text-primary" : "text-off-white"
             )}
           >
             {siteConfig.name}
@@ -51,9 +52,9 @@ export function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className={cn(
-                "text-sm font-medium transition-colors duration-300 relative group",
-                scrolled
+               className={cn(
+                 "text-sm font-medium transition-colors duration-300 relative group",
+                 scrolled
                   ? "text-muted-foreground hover:text-foreground"
                   : "text-off-white/80 hover:text-off-white"
               )}
@@ -70,8 +71,8 @@ export function Navbar() {
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
               className={cn(
                 "p-2 rounded-full transition-colors duration-300",
-                scrolled
-                  ? "text-muted-foreground hover:text-foreground"
+                 scrolled
+                   ? "text-muted-foreground hover:text-foreground"
                   : "text-off-white/80 hover:text-off-white"
               )}
               aria-label="Toggle dark mode"
@@ -84,18 +85,31 @@ export function Navbar() {
             </button>
           )}
 
-          <a
-            href="tel:+2348130036768"
-            className={cn(
-              "hidden sm:flex items-center gap-2 text-sm font-medium transition-colors duration-300",
-              scrolled
-                ? "text-primary hover:text-primary/80"
-                : "text-off-white/80 hover:text-off-white"
-            )}
-          >
+          <div className={cn(
+            "hidden sm:flex items-center gap-2 text-sm font-medium transition-colors duration-300",
+            scrolled
+              ? "text-primary"
+              : "text-off-white/80"
+          )}>
             <Phone className="h-4 w-4" />
-            <span>+234 813 003 6768</span>
-          </a>
+            <a href="tel:+2348130036768" className="hover:underline">
+              +234 813 003 6768
+            </a>
+            <a
+              href="https://wa.me/2348130036768"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={cn(
+                "transition-colors",
+                scrolled
+                  ? "text-success hover:text-success/80"
+                  : "text-off-white/80 hover:text-off-white"
+              )}
+              aria-label="Chat on WhatsApp"
+            >
+              <MessageCircle className="h-4 w-4" />
+            </a>
+          </div>
 
           <Button
             render={<Link href="/packages" />}
