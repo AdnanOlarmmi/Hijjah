@@ -65,11 +65,11 @@ export function Navbar() {
           )}
 
           <a
-            href="tel:+1234567890"
+            href="tel:+2348130036768"
             className="hidden sm:flex items-center gap-2 text-sm font-medium text-primary hover:text-primary/80 transition-colors"
           >
             <Phone className="h-4 w-4" />
-            <span>+1 (234) 567-890</span>
+            <span>+234 813 003 6768</span>
           </a>
 
           <Button render={<Link href="/packages" />} className="hidden sm:inline-flex" size="sm">

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Heart, Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { siteConfig, navLinks } from "@/lib/constants";
@@ -16,8 +16,9 @@ export function Footer() {
               {siteConfig.name}
             </Link>
             <p className="mt-4 text-sm text-muted-foreground/70 leading-relaxed max-w-xs">
-              Premium Hajj & Umrah services. Guiding pilgrims on their sacred
-              journey with care, dignity, and excellence since 2010.
+              Trusted Hajj & Umrah Services dedicated to helping pilgrims
+              experience a smooth, comfortable, and spiritually fulfilling
+              journey to the Holy Cities.
             </p>
           </div>
 
@@ -46,26 +47,41 @@ export function Footer() {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="tel:+1234567890"
+                  href="tel:+2348130036768"
                   className="flex items-center gap-2 text-sm text-muted-foreground/70 hover:text-gold transition-colors"
                 >
-                  <Phone className="h-3.5 w-3.5" />
-                  +1 (234) 567-890
+                  <Phone className="h-3.5 w-3.5 shrink-0" />
+                  +234 813 003 6768
                 </a>
               </li>
               <li>
                 <a
-                  href="mailto:info@hijja.com"
+                  href="tel:+2348140381945"
                   className="flex items-center gap-2 text-sm text-muted-foreground/70 hover:text-gold transition-colors"
                 >
-                  <Mail className="h-3.5 w-3.5" />
-                  info@hijja.com
+                  <Phone className="h-3.5 w-3.5 shrink-0" />
+                  +234 814 038 1945
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:info@hijjahservices.com"
+                  className="flex items-center gap-2 text-sm text-muted-foreground/70 hover:text-gold transition-colors"
+                >
+                  <Mail className="h-3.5 w-3.5 shrink-0" />
+                  info@hijjahservices.com
                 </a>
               </li>
               <li>
                 <span className="flex items-start gap-2 text-sm text-muted-foreground/70">
                   <MapPin className="h-3.5 w-3.5 mt-0.5 shrink-0" />
-                  123 Peace Street, Lagos, Nigeria
+                  Adeniyi Street, Ikorodu, Lagos.
+                </span>
+              </li>
+              <li>
+                <span className="flex items-start gap-2 text-sm text-muted-foreground/70">
+                  <MapPin className="h-3.5 w-3.5 mt-0.5 shrink-0" />
+                  Beside Dunmichin Junction, Ijapo Extension, Akure, Ondo State.
                 </span>
               </li>
             </ul>
@@ -76,7 +92,7 @@ export function Footer() {
               Newsletter
             </h4>
             <p className="text-sm text-muted-foreground/70 mb-4">
-              Subscribe for updates, tips, and special packages.
+              Subscribe for travel updates, Hajj and Umrah tips, and package announcements.
             </p>
             <form
               onSubmit={(e) => {
@@ -114,12 +130,10 @@ export function Footer() {
 
         <div className="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground/50">
-            &copy; {new Date().getFullYear()} {siteConfig.name}. All rights
-            reserved.
+            &copy; {new Date().getFullYear()} {siteConfig.name}. All Rights Reserved.
           </p>
-          <p className="text-sm text-muted-foreground/50 flex items-center gap-1">
-            Made with <Heart className="h-3.5 w-3.5 text-red-400 fill-red-400" />{" "}
-            for the Guests of Allah
+          <p className="text-sm text-muted-foreground/50 text-center">
+            Serving the Guests of Allah with Integrity, Care, and Excellence.
           </p>
         </div>
       </div>

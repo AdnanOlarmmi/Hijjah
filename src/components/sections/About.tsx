@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { AnimatedSection } from "@/components/shared/AnimatedSection";
-import { siteConfig } from "@/lib/constants";
 
 export function About() {
   return (
@@ -11,8 +10,8 @@ export function About() {
       <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         <div>
           <SectionHeading
-            title="More Than a Journey. A Calling."
-            subtitle={`For over 15 years, ${siteConfig.name} has been honored to serve pilgrims from around the world, providing premium Hajj and Umrah experiences rooted in care, dignity, and faith.`}
+            title="More Than a Trip — A Sacred Responsibility"
+            subtitle=""
             centered={false}
             className="mb-0 text-left"
           />
@@ -23,11 +22,10 @@ export function About() {
             transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="text-muted-foreground leading-relaxed mt-6"
           >
-            We believe that every pilgrim deserves to embark on this sacred
-            journey with peace of mind. From the moment you reach out to us
-            until your safe return home, our team handles every detail with
-            meticulous care and profound respect for the spiritual nature of
-            your pilgrimage.
+            At Hijjah Hajj & Umrah Services, we believe that performing Hajj or
+            Umrah is one of the most important journeys in a Muslim's life. Our
+            mission is to make that journey as smooth, comfortable, and
+            spiritually fulfilling as possible.
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 16 }}
@@ -36,9 +34,31 @@ export function About() {
             transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
             className="text-muted-foreground leading-relaxed mt-4"
           >
-            Licensed by the Ministry of Hajj and Umrah, partnered with premier
-            hotels and airlines, and guided by Islamic scholars — we exist to
-            make your journey seamless, comfortable, and spiritually fulfilling.
+            For over 2 years, we have been assisting pilgrims with every stage
+            of their journey — from visa assistance and flight bookings to
+            accommodation, transportation, and travel coordination.
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            className="text-muted-foreground leading-relaxed mt-4"
+          >
+            Having successfully assisted over 20 pilgrims, we remain committed
+            to serving every client with honesty, professionalism, and genuine
+            care.
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            className="text-muted-foreground leading-relaxed mt-4"
+          >
+            Whether you are embarking on your first Umrah or preparing for Hajj,
+            our dedicated team is here to help you travel with confidence and
+            peace of mind.
           </motion.p>
         </div>
 

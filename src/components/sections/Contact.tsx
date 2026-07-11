@@ -66,81 +66,87 @@ export function ContactSection() {
     <AnimatedSection id="contact">
       <SectionHeading
         title="Get in Touch"
-        subtitle="Have questions? We're here to help you begin your journey."
+        subtitle="Have questions? We're here to help you begin your sacred journey."
       />
 
       <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 max-w-5xl mx-auto">
         <div className="space-y-6">
-          {[
-            {
-              icon: Phone,
-              label: "Call Us",
-              value: "+1 (234) 567-890",
-              href: "tel:+1234567890",
-            },
-            {
-              icon: Mail,
-              label: "Email Us",
-              value: "info@hijja.com",
-              href: "mailto:info@hijja.com",
-            },
-            {
-              icon: MapPin,
-              label: "Visit Us",
-              value: "123 Peace Street, Lagos, Nigeria",
-            },
-            {
-              icon: Clock,
-              label: "Office Hours",
-              value: "Mon - Sat: 9:00 AM - 6:00 PM",
-            },
-          ].map((item, i) => (
-            <motion.div
-              key={item.label}
-              initial={{ opacity: 0, x: -16 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{
-                duration: 0.4,
-                delay: i * 0.1,
-                ease: [0.16, 1, 0.3, 1],
-              }}
-              className="flex items-start gap-4"
-            >
-              <div className="p-2.5 rounded-lg bg-primary/10 text-primary shrink-0">
-                <item.icon className="h-5 w-5" />
-              </div>
-              <div>
-                <h4 className="text-sm font-medium text-foreground">
-                  {item.label}
-                </h4>
-                {item.href ? (
-                  <a
-                    href={item.href}
-                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    {item.value}
-                  </a>
-                ) : (
-                  <p className="text-sm text-muted-foreground">{item.value}</p>
-                )}
-              </div>
-            </motion.div>
-          ))}
+          <div>
+            <h4 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
+              <Phone className="h-4 w-4 text-primary" />
+              Phone
+            </h4>
+            <div className="space-y-2 ml-6">
+              <a
+                href="tel:+2348130036768"
+                className="block text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
+                +234 813 003 6768
+              </a>
+              <a
+                href="tel:+2348140381945"
+                className="block text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
+                +234 814 038 1945
+              </a>
+            </div>
+          </div>
 
-          <motion.a
-            href="https://wa.me/1234567890"
-            target="_blank"
-            rel="noopener noreferrer"
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.4, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="inline-flex items-center gap-2 bg-success/10 text-success px-6 py-3 rounded-xl font-medium text-sm hover:bg-success/20 transition-colors"
-          >
-            <Phone className="h-4 w-4" />
-            Chat on WhatsApp
-          </motion.a>
+          <div>
+            <h4 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
+              <Mail className="h-4 w-4 text-primary" />
+              Email
+            </h4>
+            <div className="ml-6">
+              <a
+                href="mailto:info@hijjahservices.com"
+                className="text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
+                info@hijjahservices.com
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <h4 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
+              <MapPin className="h-4 w-4 text-primary" />
+              Office Locations
+            </h4>
+            <div className="space-y-3 ml-6">
+              <p className="text-sm text-muted-foreground">
+                Adeniyi Street,
+                <br />
+                Ikorodu,
+                <br />
+                Lagos.
+              </p>
+              <p className="text-sm text-muted-foreground">
+                Beside Dunmichin Junction,
+                <br />
+                Ijapo Extension,
+                <br />
+                Akure,
+                <br />
+                Ondo State.
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <h4 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
+              <Clock className="h-4 w-4 text-primary" />
+              Office Hours
+            </h4>
+            <div className="ml-6 space-y-1">
+              <p className="text-sm text-muted-foreground">
+                Monday – Friday: 9:00 AM – 5:00 PM
+              </p>
+              <p className="text-sm text-muted-foreground">
+                Saturday: 10:00 AM – 2:00 PM
+              </p>
+              <p className="text-sm text-muted-foreground">Sunday: Closed</p>
+            </div>
+          </div>
         </div>
 
         <motion.form
@@ -208,7 +214,7 @@ export function ContactSection() {
               id="phone"
               name="phone"
               type="tel"
-              placeholder="+1 (234) 567-890"
+              placeholder="+234 800 000 0000"
               className="mt-1.5"
             />
           </div>

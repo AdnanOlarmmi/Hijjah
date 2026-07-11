@@ -4,22 +4,21 @@ import { motion } from "framer-motion";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { AnimatedSection } from "@/components/shared/AnimatedSection";
 import { cn } from "@/lib/utils";
-import { siteConfig } from "@/lib/constants";
 
 const journeySteps = [
   {
     step: "01",
-    title: "Dream",
+    title: "Consultation",
     description:
-      "Help visitors imagine performing Umrah. Share the beauty and spiritual significance of the journey that awaits.",
+      "Speak with our team to choose the package that best suits your needs.",
     color: "from-emerald-500/20 to-emerald-500/5",
     border: "border-emerald-500/20",
   },
   {
     step: "02",
-    title: "Prepare",
+    title: "Preparation",
     description:
-      "From visas to vaccinations, flights to packing — we guide you through every preparation with clarity and care.",
+      "We assist with documentation, visa processing, travel advice, and pre-departure guidance.",
     color: "from-gold/20 to-gold/5",
     border: "border-gold/20",
   },
@@ -27,15 +26,15 @@ const journeySteps = [
     step: "03",
     title: "Travel",
     description:
-      "Airport assistance, group leaders, and premium comfort. Your journey begins the moment you leave home.",
+      "Travel confidently with coordinated flights, accommodation, and airport assistance.",
     color: "from-primary/20 to-primary/5",
     border: "border-primary/20",
   },
   {
     step: "04",
-    title: "Worship",
+    title: "Pilgrimage",
     description:
-      "Guided rituals, scholars by your side, and daily support. Focus completely on your spiritual experience.",
+      "Focus on your worship while we help coordinate your accommodation and logistics.",
     color: "from-emerald-500/20 to-emerald-500/5",
     border: "border-emerald-500/20",
   },
@@ -43,7 +42,7 @@ const journeySteps = [
     step: "05",
     title: "Return",
     description:
-      `Memories that last a lifetime. Certificates, community, and continued connection with your ${siteConfig.name} family.`,
+      "Return home with unforgettable memories and the satisfaction of completing your sacred journey.",
     color: "from-gold/20 to-gold/5",
     border: "border-gold/20",
   },

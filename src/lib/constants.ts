@@ -1,15 +1,15 @@
 export const siteConfig = {
-  name: "Hijjah",
+  name: "Hijjah Hajj & Umrah Services",
   tagline: "Hajj & Umrah Services",
   description:
-    "Premium Hajj and Umrah booking platform. Your journey to the House of Allah begins here.",
+    "Trusted Hajj & Umrah services dedicated to helping pilgrims experience a smooth, comfortable, and spiritually fulfilling journey to the Holy Cities.",
   url: "https://hijjah.com",
   ogImage: "/images/og.jpg",
   links: {
     twitter: "https://x.com/hijjah",
     facebook: "https://facebook.com/hijjah",
     instagram: "https://instagram.com/hijjah",
-    whatsapp: "https://wa.me/1234567890",
+    whatsapp: "https://wa.me/2348130036768",
   },
 };
 
@@ -23,35 +23,35 @@ export const navLinks = [
 ];
 
 export const trustStats = [
-  { value: 15, suffix: "+", label: "Years of Experience" },
-  { value: 5000, suffix: "+", label: "Pilgrims Served" },
-  { value: 99, suffix: "%", label: "Customer Satisfaction" },
-  { value: 50, suffix: "+", label: "Partner Hotels" },
+  { value: 2, suffix: "+", label: "Years of Experience" },
+  { value: 20, suffix: "+", label: "Pilgrims Assisted" },
+  { value: 2, suffix: "", label: "Office Locations" },
+  { value: 100, suffix: "%", label: "Commitment to Customer Care" },
 ];
 
 export const whyChooseUs = [
   {
-    title: "Licensed & Accredited",
+    title: "Trusted Guidance",
     description:
-      "Fully licensed by the Ministry of Hajj and Umrah. Your journey is in trusted hands.",
+      "Our experienced team provides reliable support before, during, and after your pilgrimage.",
     icon: "ShieldCheck",
   },
   {
-    title: "End-to-End Support",
+    title: "Complete Travel Support",
     description:
-      "From visa processing to airport assistance, we handle everything so you can focus on worship.",
+      "We assist with visa processing, flight bookings, accommodation, transportation, and travel planning.",
     icon: "Headphones",
   },
   {
-    title: "Premium Comfort",
+    title: "Comfortable Accommodation",
     description:
-      "Handpicked 5-star hotels, direct flights, and private transport for a dignified experience.",
+      "We carefully arrange quality accommodation to ensure a comfortable and convenient stay.",
     icon: "Star",
   },
   {
-    title: "Guided by Scholars",
+    title: "Personalized Service",
     description:
-      "Accompanied by qualified scholars to guide you through every ritual with confidence.",
+      "Every pilgrim's journey is unique. We provide dedicated support tailored to your individual needs.",
     icon: "BookOpen",
   },
 ];
@@ -108,55 +108,65 @@ export const faqs = [
   {
     question: "What documents do I need for Umrah?",
     answer:
-      "You need a valid passport (6+ months validity), visa photos, and a completed application form. We guide you through every step of the documentation process.",
+      "You need a valid passport (6+ months validity), passport-sized photographs, and a completed visa application form. We guide you through every step of the documentation process.",
   },
   {
     question: "How far in advance should I book?",
     answer:
-      "We recommend booking at least 2-3 months in advance to secure the best rates and availability, especially during peak seasons like Ramadan.",
+      "We recommend booking at least 2–3 months in advance to secure the best rates and availability, especially during peak seasons like Ramadan.",
   },
   {
-    question: "Is the visa included in the package price?",
+    question: "Is visa assistance included?",
     answer:
-      "Yes, all our packages include visa processing fees. We handle the entire visa application process on your behalf.",
+      "Yes, we provide full visa assistance as part of our service. Our team handles the entire application process on your behalf.",
   },
   {
-    question: "Can I customize my package?",
+    question: "What is included in the package?",
     answer:
-      "Absolutely. Contact our team and we will tailor a package that matches your specific needs, preferences, and budget.",
+      "Our packages include visa assistance, flight bookings, accommodation, transportation coordination, and travel support throughout your journey.",
+  },
+  {
+    question: "Can I travel with my family?",
+    answer:
+      "Absolutely. We welcome families and can arrange group bookings. Contact our team for a tailored package that suits your family's needs.",
   },
   {
     question: "Do you provide group leaders?",
     answer:
-      "Yes, all our group packages include an experienced group leader who will accompany you throughout the journey.",
+      "Yes, our group packages include an experienced group leader who accompanies and assists pilgrims throughout the journey.",
   },
   {
-    question: "What happens if my flight is delayed?",
+    question: "Can I pay in installments?",
     answer:
-      "Our airport assistance team monitors all flights and will be there to greet you regardless of delays. We ensure a smooth arrival experience.",
+      "Yes, we offer flexible installment payment plans to make your pilgrimage more affordable. Contact our team for details.",
+  },
+  {
+    question: "What should I pack for Hajj or Umrah?",
+    answer:
+      "We provide a detailed packing checklist upon booking. Essentials include Ihram clothing, comfortable footwear, personal toiletries, medications, and important documents. We guide you through everything you need.",
   },
 ];
 
 export const testimonials = [
   {
-    name: "Aisha Mohammed",
-    location: "Lagos, Nigeria",
+    name: "Ammatullah Adam",
+    location: "Kogi State, Nigeria",
     rating: 5,
-    text: "Alhamdulillah, Hijjah made my first Umrah an absolutely seamless experience. From the visa processing to the hotel arrangements, everything was perfect. The group leader was knowledgeable and patient. I cannot recommend them enough.",
+    text: "Alhamdulillah! My journey with Hijjah was everything I prayed for and more. From the visa processing to our accommodation in Makkah, everything was perfectly arranged. As a first-time pilgrim from Kogi, I was nervous, but their team held my hand through every step. I Left Nigeria with peace of mind and returned with a heart full of gratitude.",
     image: "/images/testimonials/aisha.svg",
   },
   {
-    name: "Ahmed Hassan",
-    location: "Cairo, Egypt",
+    name: "Abdullah Oladapo",
+    location: "Ekiti State, Nigeria",
     rating: 5,
-    text: "This was my fifth Umrah, and by far the most comfortable. The 5-star hotel was steps from the Haram, the scholar explained every ritual beautifully, and the private transport made everything convenient.",
+    text: "Hijjah made my Umrah experience truly unforgettable. The coordination from Lagos to Jeddah was seamless, the hotels were comfortable, and the group leader was always available to assist. Coming from Ekiti, I was worried about the logistics, but they handled everything. I highly recommend Hijjah to any Nigerian Muslim seeking a stress-free pilgrimage.",
     image: "/images/testimonials/ahmed.svg",
   },
   {
-    name: "Fatima Ibrahim",
-    location: "London, UK",
-    rating: 4,
-    text: "The attention to detail was remarkable. They even had a welcome kit with a prayer mat, tasbih, and a guidebook. My family felt truly cared for throughout our journey.",
+    name: "Salahudeen Muslim",
+    location: "Ilorin, Kwara State, Nigeria",
+    rating: 5,
+    text: "Masha Allah! What an amazing experience with Hijjah. From our departure from Nigeria to our return, every detail was taken care of. The accommodation was close to the Haram, the transport was well organized, and the scholars on ground answered all our questions. I went with family from Ilorin and we all came back deeply fulfilled. BarakAllahu feekum!",
     image: "/images/testimonials/fatima.svg",
   },
 ];

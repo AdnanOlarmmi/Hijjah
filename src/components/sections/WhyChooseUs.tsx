@@ -23,7 +23,7 @@ export function WhyChooseUs() {
     <AnimatedSection className="bg-muted/30">
       <SectionHeading
         title={`Why Choose ${siteConfig.name}?`}
-        subtitle="We don't just book trips. We create sacred journeys with care, expertise, and devotion."
+        subtitle=""
       />
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
