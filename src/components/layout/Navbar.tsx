@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, Moon, Sun, Phone } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
@@ -13,6 +14,8 @@ import { navLinks, siteConfig } from "@/lib/constants";
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const { theme, setTheme, resolvedTheme } = useTheme();
+  const pathname = usePathname();
+  const isHome = pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -26,7 +29,9 @@ export function Navbar() {
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         scrolled
           ? "bg-background/80 backdrop-blur-xl border-b border-border"
-          : "bg-black/10 backdrop-blur-sm"
+          : isHome
+            ? "bg-black/10 backdrop-blur-sm"
+            : "bg-background/80 backdrop-blur-xl border-b border-border"
       )}
     >
       <nav className="content-max-w flex items-center justify-between h-16 sm:h-20 px-4 sm:px-6 lg:px-8">
@@ -34,7 +39,7 @@ export function Navbar() {
           <span
             className={cn(
               "text-xl sm:text-2xl font-heading font-semibold transition-colors duration-300",
-              scrolled ? "text-primary" : "text-off-white"
+              scrolled || !isHome ? "text-primary" : "text-off-white"
             )}
           >
             {siteConfig.name}
