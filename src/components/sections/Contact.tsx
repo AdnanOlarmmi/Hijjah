@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Send, Phone, Mail, MapPin, Clock, AlertCircle } from "lucide-react";
+import { Send, Phone, Mail, MapPin, Clock, MessageCircle, AlertCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -77,18 +77,40 @@ export function ContactSection() {
               Phone
             </h4>
             <div className="space-y-2 ml-6">
-              <a
-                href="tel:+2348130036768"
-                className="block text-sm text-muted-foreground hover:text-primary transition-colors"
-              >
-                +234 813 003 6768
-              </a>
-              <a
-                href="tel:+2348140381945"
-                className="block text-sm text-muted-foreground hover:text-primary transition-colors"
-              >
-                +234 814 038 1945
-              </a>
+              <div className="flex items-center gap-2">
+                <a
+                  href="tel:+2348130036768"
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                >
+                  +234 813 003 6768
+                </a>
+                <a
+                  href="https://wa.me/2348130036768"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-success hover:text-success/80 transition-colors"
+                  aria-label="Chat on WhatsApp"
+                >
+                  <MessageCircle className="h-4 w-4" />
+                </a>
+              </div>
+              <div className="flex items-center gap-2">
+                <a
+                  href="tel:+2348140381945"
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                >
+                  +234 814 038 1945
+                </a>
+                <a
+                  href="https://wa.me/2348140381945"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-success hover:text-success/80 transition-colors"
+                  aria-label="Chat on WhatsApp"
+                >
+                  <MessageCircle className="h-4 w-4" />
+                </a>
+              </div>
             </div>
           </div>
 

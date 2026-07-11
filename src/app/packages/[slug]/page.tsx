@@ -24,7 +24,7 @@ export async function generateMetadata({
 
   return {
     title: `${pkg.title}`,
-    description: `${pkg.title} — from $${pkg.price}. ${pkg.duration}, ${pkg.hotel} hotel, ${pkg.flight}.`,
+    description: `${pkg.title} — from ${pkg.currency || "$"}${pkg.price}. ${pkg.duration}, ${pkg.hotel} hotel, ${pkg.flight}.`,
   };
 }
 
@@ -50,6 +50,8 @@ export default async function PackageDetailPage({
     );
   }
 
+  const currency = pkg.currency || "$";
+
   return (
     <main className="pt-24 pb-16">
       <div className="content-max-w px-4 sm:px-6 lg:px-8">
@@ -63,12 +65,23 @@ export default async function PackageDetailPage({
             {pkg.title}
           </h1>
           <p className="mt-4 text-lg text-muted-foreground">
-            From{" "}
+            {pkg.isDeposit ? "Deposit" : "From"}{" "}
             <span className="text-3xl font-bold text-primary">
-              ${pkg.price.toLocaleString()}
+              {currency}{pkg.price.toLocaleString()}
             </span>{" "}
             per person
           </p>
+
+          {pkg.earlyBirdPrice && (
+            <p className="mt-2 text-success font-medium">
+              Early bird: {currency}{pkg.earlyBirdPrice.toLocaleString()}
+              {pkg.earlyBirdDiscount && (
+                <span className="text-muted-foreground ml-1">
+                  (save {currency}{pkg.earlyBirdDiscount.toLocaleString()})
+                </span>
+              )}
+            </p>
+          )}
 
           <div className="mt-10 grid sm:grid-cols-2 gap-6">
             {[
@@ -98,12 +111,14 @@ export default async function PackageDetailPage({
               size="lg"
               className="w-full sm:w-auto px-10"
             >
-              Book Now — ${pkg.price.toLocaleString()}
+              {pkg.isDeposit ? `Pay Deposit — ${currency}${pkg.price.toLocaleString()}` : `Book Now — ${currency}${pkg.price.toLocaleString()}`}
             </Button>
             <p className="text-sm text-muted-foreground">
-              {pkg.remainingSeats > 0
-                ? `${pkg.remainingSeats} seats remaining`
-                : "Fully booked"}
+              {pkg.isDeposit
+                ? "Full payment plan available. Contact us for details."
+                : pkg.remainingSeats > 0
+                  ? `${pkg.remainingSeats} seats remaining`
+                  : "Fully booked"}
             </p>
           </div>
         </div>

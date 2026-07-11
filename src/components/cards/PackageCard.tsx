@@ -11,6 +11,8 @@ interface PackageCardProps {
   slug: string;
   title: string;
   price: number;
+  earlyBirdPrice?: number | null;
+  earlyBirdDiscount?: number | null;
   duration: string;
   hotel: string;
   flight: string;
@@ -21,12 +23,16 @@ interface PackageCardProps {
   remainingSeats: number;
   popular?: boolean;
   index?: number;
+  currency?: string;
+  isDeposit?: boolean;
 }
 
 export function PackageCard({
   slug,
   title,
   price,
+  earlyBirdPrice,
+  earlyBirdDiscount,
   duration,
   hotel,
   flight,
@@ -37,6 +43,8 @@ export function PackageCard({
   remainingSeats,
   popular,
   index = 0,
+  currency = "$",
+  isDeposit,
 }: PackageCardProps) {
   const features = [
     `${duration} Duration`,
@@ -68,11 +76,25 @@ export function PackageCard({
         </Badge>
       )}
 
-      <div className="flex items-baseline gap-1 mb-4">
-        <span className="text-sm text-muted-foreground">from</span>
-        <span className="text-3xl sm:text-4xl font-heading font-bold text-foreground">
-          ${price.toLocaleString()}
-        </span>
+      <div className="mb-4">
+        <div className="flex items-baseline gap-1">
+          <span className="text-sm text-muted-foreground">
+            {isDeposit ? "Deposit" : "from"}
+          </span>
+          <span className="text-3xl sm:text-4xl font-heading font-bold text-foreground">
+            {currency}{price.toLocaleString()}
+          </span>
+        </div>
+        {earlyBirdPrice && (
+          <p className="text-sm text-success mt-1">
+            Early bird: {currency}{earlyBirdPrice.toLocaleString()}
+            {earlyBirdDiscount && (
+              <span className="text-muted-foreground ml-1">
+                (save {currency}{earlyBirdDiscount.toLocaleString()})
+              </span>
+            )}
+          </p>
+        )}
       </div>
 
       <h3 className="text-xl font-heading font-semibold text-foreground mb-6">

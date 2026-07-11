@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { siteConfig, navLinks } from "@/lib/constants";
@@ -46,22 +46,44 @@ export function Footer() {
             </h4>
             <ul className="space-y-3">
               <li>
-                <a
-                  href="tel:+2348130036768"
-                  className="flex items-center gap-2 text-sm text-muted-foreground/70 hover:text-gold transition-colors"
-                >
-                  <Phone className="h-3.5 w-3.5 shrink-0" />
-                  +234 813 003 6768
-                </a>
+                <div className="flex items-center gap-2">
+                  <a
+                    href="tel:+2348130036768"
+                    className="flex items-center gap-2 text-sm text-muted-foreground/70 hover:text-gold transition-colors"
+                  >
+                    <Phone className="h-3.5 w-3.5 shrink-0" />
+                    +234 813 003 6768
+                  </a>
+                  <a
+                    href="https://wa.me/2348130036768"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-success/70 hover:text-success transition-colors"
+                    aria-label="Chat on WhatsApp"
+                  >
+                    <MessageCircle className="h-3.5 w-3.5" />
+                  </a>
+                </div>
               </li>
               <li>
-                <a
-                  href="tel:+2348140381945"
-                  className="flex items-center gap-2 text-sm text-muted-foreground/70 hover:text-gold transition-colors"
-                >
-                  <Phone className="h-3.5 w-3.5 shrink-0" />
-                  +234 814 038 1945
-                </a>
+                <div className="flex items-center gap-2">
+                  <a
+                    href="tel:+2348140381945"
+                    className="flex items-center gap-2 text-sm text-muted-foreground/70 hover:text-gold transition-colors"
+                  >
+                    <Phone className="h-3.5 w-3.5 shrink-0" />
+                    +234 814 038 1945
+                  </a>
+                  <a
+                    href="https://wa.me/2348140381945"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-success/70 hover:text-success transition-colors"
+                    aria-label="Chat on WhatsApp"
+                  >
+                    <MessageCircle className="h-3.5 w-3.5" />
+                  </a>
+                </div>
               </li>
               <li>
                 <a

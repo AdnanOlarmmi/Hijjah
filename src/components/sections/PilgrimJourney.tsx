@@ -8,14 +8,22 @@ import { cn } from "@/lib/utils";
 const journeySteps = [
   {
     step: "01",
-    title: "Consultation",
+    title: "Pay Small Small",
     description:
-      "Speak with our team to choose the package that best suits your needs.",
+      "Secure your package with an easy installment plan. Pay in bits that fit your budget — no need to pay everything at once.",
     color: "from-emerald-500/20 to-emerald-500/5",
     border: "border-emerald-500/20",
   },
   {
     step: "02",
+    title: "Consultation",
+    description:
+      "Speak with our team to choose the package that best suits your needs.",
+    color: "from-gold/20 to-gold/5",
+    border: "border-gold/20",
+  },
+  {
+    step: "03",
     title: "Preparation",
     description:
       "We assist with documentation, visa processing, travel advice, and pre-departure guidance.",
@@ -23,7 +31,7 @@ const journeySteps = [
     border: "border-gold/20",
   },
   {
-    step: "03",
+    step: "04",
     title: "Travel",
     description:
       "Travel confidently with coordinated flights, accommodation, and airport assistance.",
@@ -31,7 +39,7 @@ const journeySteps = [
     border: "border-primary/20",
   },
   {
-    step: "04",
+    step: "05",
     title: "Pilgrimage",
     description:
       "Focus on your worship while we help coordinate your accommodation and logistics.",
@@ -39,7 +47,7 @@ const journeySteps = [
     border: "border-emerald-500/20",
   },
   {
-    step: "05",
+    step: "06",
     title: "Return",
     description:
       "Return home with unforgettable memories and the satisfaction of completing your sacred journey.",
